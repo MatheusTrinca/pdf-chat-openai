@@ -1,6 +1,6 @@
 'use client';
 
-import { CircleArrowDown, CircleArrowDownIcon, RocketIcon } from 'lucide-react';
+import { CircleArrowDown, RocketIcon } from 'lucide-react';
 import { useCallback } from 'react';
 import { useDropzone } from 'react-dropzone';
 
