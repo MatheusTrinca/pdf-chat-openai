@@ -1,6 +1,7 @@
 'use client';
 
 import { db, storage } from '@/firebase';
+import { generateEmbeddingsInPineconeVectorStore } from '@/lib/langchain';
 import { useUser } from '@clerk/nextjs';
 import { error } from 'console';
 import { doc, setDoc } from 'firebase/firestore';
@@ -65,7 +66,7 @@ function useUpload() {
         });
 
         setStatus(StatusText.GENERATING);
-        // Generate AI Embeddings...
+        await generateEmbeddingsInPineconeVectorStore(fileIdToUpload);
 
         setFileId(fileIdToUpload);
       }
